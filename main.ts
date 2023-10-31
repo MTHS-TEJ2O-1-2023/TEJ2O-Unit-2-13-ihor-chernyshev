@@ -2,9 +2,10 @@
  *
  * Created by: Ihor Chernyshev
  * Created on: Oct 2023
- * This program shows a while loop
+ * This program when you press the "A" button counts down from 4 to 0 at each number, and light up same number of neopixels
 */
 
+// setup
 let neopixelStrip: neopixel.Strip = null
 let loopCounter = 4
 
@@ -16,6 +17,8 @@ neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
 neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
+
+// turning on and off neopixels
 input.onButtonPressed(Button.A, function () {
   while (loopCounter >= 4) {
     neopixelStrip.setPixelColor(loopCounter, neopixel.colors(NeoPixelColors.White))
