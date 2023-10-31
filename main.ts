@@ -20,14 +20,13 @@ basic.showIcon(IconNames.Happy)
 
 // turning on and off neopixels
 input.onButtonPressed(Button.A, function () {
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
+  neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.White))
+  neopixelStrip.show()
   while (loopCounter >= 0) {
     basic.clearScreen()
-    neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
-    neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
-    neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
-    neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
-    neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.White))
-    neopixelStrip.show()
     neopixelStrip.setPixelColor(loopCounter, neopixel.colors(NeoPixelColors.Black))
     neopixelStrip.show()
     basic.showNumber(loopCounter)
