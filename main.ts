@@ -7,7 +7,7 @@
 
 // setup
 let neopixelStrip: neopixel.Strip = null
-let loopCounter = 4
+let loopCounter = 0
 
 basic.clearScreen()
 neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
@@ -20,9 +20,9 @@ basic.showIcon(IconNames.Happy)
 
 // turning on and off neopixels
 input.onButtonPressed(Button.A, function () {
-  while (loopCounter >= 4) {
+  while (loopCounter <= 4) {
     neopixelStrip.setPixelColor(loopCounter, neopixel.colors(NeoPixelColors.White))
     neopixelStrip.show()
-    loopCounter = loopCounter - 1
+    loopCounter = loopCounter + 1
   }
 })
