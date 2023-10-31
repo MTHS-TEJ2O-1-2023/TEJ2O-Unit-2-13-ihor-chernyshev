@@ -20,11 +20,10 @@ basic.showIcon(IconNames.Happy)
 
 // turning on and off neopixels
 input.onButtonPressed(Button.A, function () {
-  while (loopCounter <= 4) {
+  while (loopCounter >= 0) {
     basic.clearScreen()
     neopixelStrip.setPixelColor(loopCounter, neopixel.colors(NeoPixelColors.White))
     neopixelStrip.show()
-    basic.pause(1000)
     basic.showNumber(loopCounter)
     loopCounter = loopCounter - 1
   }
